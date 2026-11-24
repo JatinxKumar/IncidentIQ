@@ -1,0 +1,15 @@
+feature,importance,rank,importance_pct,description
+memory_usage,0.36572147037378105,1,36.57214703737811,Memory utilization percentage. High values indicate memory pressure.
+cpu_usage,0.3576417560370908,2,35.76417560370908,CPU utilization percentage. High values indicate system load.
+http_status,0.23544553254963205,3,23.544553254963205,HTTP status code. 5xx codes indicate server errors.
+error_rate,0.01090545854649662,4,1.090545854649662,Error rate as a fraction (0-1). High values indicate system errors.
+response_time,0.010579037761271759,5,1.057903776127176,Average response time in milliseconds. High values indicate performance issues.
+request_rate,0.0034538925830888655,6,0.34538925830888656,Number of requests per second. High values indicate high traffic.
+cache_hit_ratio,0.003382782186762298,7,0.3382782186762298,Cache hit ratio (0-1). Low values indicate cache inefficiency.
+query_latency,0.003130980275066169,8,0.31309802750661686,Database query latency in milliseconds. High values indicate slow queries.
+disk_usage,0.00270048129282283,9,0.270048129282283,Disk space utilization percentage. High values indicate storage constraints.
+db_connections,0.002596109772177954,10,0.2596109772177954,Number of database connections. High values indicate database load.
+network_latency,0.002578488574202701,11,0.2578488574202701,Network latency in milliseconds. High values indicate network issues.
+service_availability,0.0011819082067405847,12,0.11819082067405846,Service availability percentage. Low values indicate outages.
+restart_count,0.0005473493330519002,13,0.054734933305190026,Number of service restarts. High values indicate instability.
+deployment_indicator,0.0001347525078143533,14,0.01347525078143533,Deployment indicator (0/1). 1 indicates recent deployment.

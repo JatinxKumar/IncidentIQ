@@ -1,5 +1,5 @@
 # Software Requirements Specification (SRS)
-## SentinelAI — AI-Based Incident Detection and Root Cause Analysis Platform
+## IncidentIQ — AI-Based Incident Detection and Root Cause Analysis Platform
 
 **Version:** 1.0  
 **Date:** July 20, 2026  
@@ -33,11 +33,11 @@
 
 ### 1.1 Purpose
 
-This document defines the complete functional and non-functional requirements for **SentinelAI**, an enterprise-grade SaaS platform that ingests system telemetry data (logs, metrics, traces), detects anomalies and incidents using machine learning models, performs root cause analysis, and provides actionable intelligence through a real-time dashboard.
+This document defines the complete functional and non-functional requirements for **IncidentIQ**, an enterprise-grade SaaS platform that ingests system telemetry data (logs, metrics, traces), detects anomalies and incidents using machine learning models, performs root cause analysis, and provides actionable intelligence through a real-time dashboard.
 
 ### 1.2 Project Background
 
-Modern distributed systems (microservices, Kubernetes clusters, cloud infrastructure) generate terabytes of telemetry data per day. Traditional rule-based alerting produces excessive false positives and cannot perform automated root cause analysis. SentinelAI replaces brittle threshold-based rules with learned behavioral models, reducing mean time to detect (MTTD) and mean time to resolve (MTTR) incidents.
+Modern distributed systems (microservices, Kubernetes clusters, cloud infrastructure) generate terabytes of telemetry data per day. Traditional rule-based alerting produces excessive false positives and cannot perform automated root cause analysis. IncidentIQ replaces brittle threshold-based rules with learned behavioral models, reducing mean time to detect (MTTD) and mean time to resolve (MTTR) incidents.
 
 ### 1.3 Document Conventions
 
@@ -67,7 +67,7 @@ Modern distributed systems (microservices, Kubernetes clusters, cloud infrastruc
 
 ### 2.2 Core Value Propositions
 
-| Problem (Status Quo) | SentinelAI Solution |
+| Problem (Status Quo) | IncidentIQ Solution |
 |----------------------|---------------------|
 | Alert storms from threshold rules | ML-based anomaly detection with dynamic baselines |
 | Manual log triage taking hours | Automated RCA with contributing factor ranking |
@@ -142,7 +142,7 @@ Modern distributed systems (microservices, Kubernetes clusters, cloud infrastruc
 
 ### 4.1 Architectural Style
 
-SentinelAI follows a **Clean Architecture** (Hexagonal/Ports-and-Adapters) pattern layered as:
+IncidentIQ follows a **Clean Architecture** (Hexagonal/Ports-and-Adapters) pattern layered as:
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -346,37 +346,37 @@ The supervised classification pipeline labels telemetry windows as **normal (0)*
 - **Purpose:** Transparent, auditable classification; provides human-readable rule paths for RCA
 - **Implementation:** `sklearn.tree.DecisionTreeClassifier`
 - **Hyperparameters:** `max_depth`, `min_samples_split`, `criterion` (gini/entropy)
-- **Role in SentinelAI:** Primary RCA explainability engine — decision paths map directly to root cause explanation
+- **Role in IncidentIQ:** Primary RCA explainability engine — decision paths map directly to root cause explanation
 
 #### 6.1.2 Random Forest Classifier
 - **Purpose:** Ensemble of decision trees; higher accuracy, lower variance, native feature importance
 - **Implementation:** `sklearn.ensemble.RandomForestClassifier`
 - **Hyperparameters:** `n_estimators`, `max_depth`, `max_features`
-- **Role in SentinelAI:** Primary anomaly detection classifier in production ensemble
+- **Role in IncidentIQ:** Primary anomaly detection classifier in production ensemble
 
 #### 6.1.3 K-Nearest Neighbors (KNN)
 - **Purpose:** Instance-based learning; effective for detecting anomalies in low-dimensional feature spaces
 - **Implementation:** `sklearn.neighbors.KNeighborsClassifier`
 - **Hyperparameters:** `n_neighbors`, `metric` (euclidean/manhattan), `weights`
-- **Role in SentinelAI:** Secondary classifier; contributes to ensemble voting
+- **Role in IncidentIQ:** Secondary classifier; contributes to ensemble voting
 
 #### 6.1.4 Support Vector Machine (SVM)
 - **Purpose:** Maximum-margin classifier; effective for high-dimensional feature spaces
 - **Implementation:** `sklearn.svm.SVC`
 - **Hyperparameters:** `C`, `kernel` (rbf/linear/poly), `gamma`
-- **Role in SentinelAI:** Contributes to ensemble; used for cases with clear class separation
+- **Role in IncidentIQ:** Contributes to ensemble; used for cases with clear class separation
 
 #### 6.1.5 Linear Regression (Baseline Deviation)
 - **Purpose:** Predict expected metric values; deviation from prediction = anomaly signal
 - **Implementation:** `sklearn.linear_model.LinearRegression`
-- **Role in SentinelAI:** Baseline prediction model for trend analysis and threshold auto-calibration
+- **Role in IncidentIQ:** Baseline prediction model for trend analysis and threshold auto-calibration
 
 ### 6.2 Unsupervised Learning: K-Means Clustering
 
 - **Purpose:** Cluster telemetry windows into behavioral groups without labels; windows far from cluster centroids are anomaly candidates
 - **Implementation:** `sklearn.cluster.KMeans`
 - **Hyperparameters:** `n_clusters`, `init` (k-means++), `max_iter`
-- **Role in SentinelAI:**  
+- **Role in IncidentIQ:**  
   1. Cold-start anomaly detection before labeled data exists  
   2. Service behavior profiling (identify normal operating regimes)  
   3. Incident grouping (cluster similar incidents for pattern analysis)
@@ -815,4 +815,4 @@ lib/
 
 ---
 
-*End of SRS v1.0 — SentinelAI*
+*End of SRS v1.0 — IncidentIQ*

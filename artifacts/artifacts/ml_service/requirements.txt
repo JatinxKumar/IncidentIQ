@@ -1,0 +1,44 @@
+# IncidentIQ Backend — Python Dependencies
+# =========================================
+# All versions are pinned for reproducible builds.
+# Install: python3 -m pip install -r requirements.txt
+#
+# Phase additions:
+#   Phase 3 (Backend Foundation):   sqlalchemy[asyncio], asyncpg
+#   Module 2 (Data Preprocessing):  numpy, pandas
+#   Module 4 (ML Engine):           scikit-learn, joblib
+#   Module 5 (Model Evaluation):    matplotlib (confusion matrix rendering)
+#   Module 8 (Generative AI):       openai, tiktoken
+
+# ─── Web Framework ────────────────────────────────────────────────────────────
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+
+# ─── Validation & Settings ────────────────────────────────────────────────────
+pydantic==2.10.4
+pydantic-settings==2.7.1
+
+# ─── Database (Async) ─────────────────────────────────────────────────────────
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+
+# ─── HTTP Client ──────────────────────────────────────────────────────────────
+httpx==0.28.1
+
+# ─── Environment ──────────────────────────────────────────────────────────────
+python-dotenv==1.0.1
+
+# ─── Pending — Module 2 ───────────────────────────────────────────────────────
+# numpy==2.2.1
+# pandas==2.2.3
+
+# ─── Pending — Module 4 ───────────────────────────────────────────────────────
+# scikit-learn==1.6.1
+# joblib==1.4.2
+
+# ─── Pending — Module 5 ───────────────────────────────────────────────────────
+# matplotlib==3.10.0
+
+# ─── Pending — Module 8 ───────────────────────────────────────────────────────
+# openai==1.59.9
+# tiktoken==0.8.0

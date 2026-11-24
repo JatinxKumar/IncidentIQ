@@ -1,0 +1,20 @@
+{
+  "num_samples": 10000,
+  "num_features": 15,
+  "anomaly_rate": 0.3985,
+  "feature_names": [
+    "network_latency",
+    "request_rate",
+    "error_rate",
+    "response_time",
+    "http_status",
+    "service_availability",
+    "db_connections",
+    "query_latency",
+    "cache_hit_ratio",
+    "restart_count",
+    "deployment_indicator"
+  ],
+  "generated_at": "2026-11-12T09:43:31.515032",
+  "description": "Synthetic telemetry dataset for SentinelAI ML evaluation"
+}

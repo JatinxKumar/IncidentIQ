@@ -1,0 +1,17 @@
+{
+  "model_type": "LinearRegression",
+  "random_state": 42,
+  "test_size": 0.2,
+  "x_feature": "cpu_usage",
+  "y_feature": "memory_usage",
+  "slope": -0.0016381705438638695,
+  "intercept": 60.31991288044107,
+  "regression_equation": "y = -0.0016 * x + 60.3199",
+  "mae": 0.5526167150415648,
+  "mse": 11.126371614271896,
+  "rmse": 3.3356216233667597,
+  "r2_score": -0.00025368171785000726,
+  "n_train": 5795,
+  "n_test": 1449,
+  "trained_at": "2026-11-12T09:44:36.516685"
+}
